@@ -39,4 +39,38 @@ form.addEventListener("reset", function(e) { //
   }
 });
 
+const inputs = form.querySelectorAll("input, textarea, select");
+
+inputs.forEach(input => {
+  input.addEventListener("blur", function(e) {
+    if (input.name === "about") {
+        return; } // Text area is not required
+    // Check if the field is empty
+    if (input.value.trim() === "") {
+      // Look for an existing span with class "required" next to the input
+      let span = input.parentElement.querySelector(".required");
+
+      // If none exists, create one
+      if (!span) {
+        span = document.createElement("span");
+        span.className = "required";
+        input.parentElement.appendChild(span);
+      }
+
+      // Show the asterisk
+      span.textContent = " *";
+      span.style.color = "red";
+      span.style.fontWeight = "bold";
+    } else {
+      // If the field is filled, remove the asterisk
+      const span = input.parentElement.querySelector(".required");
+      if (span) {
+        span.textContent = "";
+      }
+    }
+  });
+});
+
+
+
 // called when user is on the input field
