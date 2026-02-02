@@ -66,36 +66,36 @@
             <h3>by SD Tejada </h3>
         </div>
         <nav class="navbar">
-            <a href="../../index.html"> Home </a>
+            <a href="../index.html"> Home </a>
             <a href="registered.html"> Show Saved Accounts </a>
         </nav>
     </header>
     <section>
       <h1 class="title">Sign-up Page</h1>
-      <form id="dForm" action="registered.html" method="get">
+      <form id="dForm">
         <fieldset>
           <legend>Personal Information</legend><br/>
           <label> Student ID: 
-            <input type="number" name="uname" id="uname" required />
+            <input type="number" name="StudentID" id="ID" required />
           </label><br/><br/>
           <label> Full Name:
-            <input type="text" name="uname" id="uname" required />
+            <input type="text" name="fullName" id="fullName" required />
           </label><br/><br/>
           <label> Birthday:
-            <input type="date" name="dob" id="dob" />
+            <input type="date" name="birthDay" id="birthDay" />
           </label><br/><br/>
           <label> Email Address:
-            <input type="text" name="uname" id="uname" required />
+            <input type="text" name="emailAddress" id="emailAddress" required />
           </label><br/><br/>
           <label> 
         </fieldset> 
         <fieldset>
             <legend>Additional</legend><br/>
             <label> Mobile Phone: 
-                <input type="text" name="uname" id="uname" required />
+                <input type="text" name="phoneNumber" id="phoneNumber" required />
               </label><br/><br/>
           <label> Grade Level: 
-            <select name="grade-level" id="grade-level" required>
+            <select name="gradeLevel" id="gradeLevel" required>
             <option value = "">Select</option>
             <option value = "Grade 7">Grade 7</option>
             <option value = "Grade 8">Grade 8</option>
@@ -103,10 +103,11 @@
             <option value = "Grade 10">Grade 10</option>
             <option value = "Grade 11">Grade 11</option>
             <option value = "Grade 12">Grade 12</option>
+            </select>
           </label><br/><br/>
           <label> Intern/Extern: 
-            <input type="radio" name="inter/extern" value="Intern" /> Intern
-            <input type="radio" name="inter/extern" value="Extern" /> Extern
+            <input type="radio" name="status" value="Intern" /> Intern
+            <input type="radio" name="status" value="Extern" /> Extern
           </label><br/><br/>
           <label> Preferred Organization/Club: 
             <select name="club" id="club" required>
