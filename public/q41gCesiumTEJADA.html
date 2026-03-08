@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Q3 2nd Graded Exercise">
+        <meta name="keywords" content="HTML Forms">
+        <meta name="author" content="SD Tejada">
+        <link rel="stylesheet" href="q41gCesiumTEJADA.css">
+        
+    </head>
+
+    <body>
+
+        <main>
+
+       <section>
+            <h1 class="heading">Add a Movie</h1>
+            <form id="dForm">
+                <fieldset>
+                <label> Title: <br/>
+                <input type="text" name="title" id="title" required />
+                </label><br/><br/>
+                <label> Year: <br/>
+                <input type="text" name="year" id="year" required />
+                </label><br/><br/>
+                <label> Genre: <br/>
+                <select name="genre" id="genre" required>
+                    <option value="">-- Select an option --</option>
+                    <option value="Action">Action</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Sci-fi">Sci-fi</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Comedy">Comedy</option>
+                </select>
+                </label><br/><br/>
+                <div class="rating-section">
+                <div class="rating">
+                    <legend>:Rating</legend>
+  
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label for="star5">★</label>
+  
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label for="star4">★</label>
+  
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label for="star3">★</label>
+  
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label for="star2">★</label>
+  
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label for="star1">★</label>
+                </div> </div> <br/>
+            
+
+                <button type="submit">Add Movie</button>
+
+
+                </fieldset>
+            </form>
+            <h1 class="heading"> Movies: </h1>
+            <div class="movie-list" id="movieList"></div>
+            </section>
+            </main>
+        <script src="q41gCesiumTEJADA.js"></script>
+    </body>

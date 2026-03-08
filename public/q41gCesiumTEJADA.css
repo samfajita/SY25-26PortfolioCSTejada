@@ -1,0 +1,115 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.heading {
+    text-align: center;
+}
+
+section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transform: scale(1.5);   /* makes everything 20% bigger */
+    width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow */
+
+}
+
+form input[type="text"],
+form select {
+  display: block;       /* makes them block-level elements */
+  width: 100%;          /* full width of the parent container */
+  padding: 0.75rem;     /* adds comfortable spacing inside */
+  margin-bottom: 1rem;  /* space between fields */
+  font-size: 1rem;      /* readable text size */
+  border: 1px solid #ccc; /* subtle border */
+  border-radius: 5px;   /* rounded corners */
+  box-sizing: border-box; /* ensures padding doesn’t overflow */
+}
+
+
+fieldset {
+    border: none;
+}
+
+label, legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.rating-section {
+    text-align:left
+}
+
+.rating {
+  direction: rtl; /* ensures stars fill left-to-right */
+  unicode-bidi: bidi-override;
+}
+
+.rating input {
+  display: none; /* hide radio buttons */
+}
+
+.rating label {
+  font-size: 2rem;
+  color: #ccc;       /* default gray */
+  cursor: pointer;
+}
+
+.rating input:checked ~ label {
+  color: gold;       /* selected stars + all before it turn gold */
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;       /* hover preview */
+}
+
+button {
+  display: block;       /* makes it a block element */
+  width: 100%;          /* stretches across the parent container */
+  padding: 1rem;        /* adds some vertical space inside */
+  font-size: 1.2rem;    /* makes the text a bit larger */
+  background-color: #007bff; /* nice blue background */
+  color: white;         /* white text */
+  border: none;         /* remove default border */
+  border-radius: 5px;   /* rounded corners */
+  cursor: pointer;      /* pointer cursor on hover */
+}
+
+button:hover {
+  background-color: #0056b3; /* darker blue when hovered */
+}
+
+.movie-card {
+  border: 1px solid #ccc;       /* thin border */
+  border-radius: 8px;           /* rounded corners */
+  padding: 1rem;                /* space inside */
+  margin-bottom: 1rem;          /* space between cards */
+  background-color: #f9f9f9;    /* light background */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+ul {
+  padding-left: 0;    /* remove default padding */
+  margin-left: 0;     /* remove default margin */
+}
+.movie-card p {
+  margin: 0;                    /* remove default spacing */
+  font-size: 1rem;
+}
+
+.stars {
+  color: gold;                  /* makes ★ yellow */
+  font-weight: bold;
+}
+
+
+
+
