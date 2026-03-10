@@ -110,6 +110,13 @@ ul {
   font-weight: bold;
 }
 
+.delete-button {
+  display: inline;
+  width: 20%;
+  padding: 0.5rem;        /* adds some vertical space inside */
+  font-size: 1rem;    /* makes the text a bit larger */
+}
+
 
 
 

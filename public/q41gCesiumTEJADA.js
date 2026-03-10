@@ -11,8 +11,22 @@ form.addEventListener("submit", function(e) {
     // Load existing movies (array of objects)
     let movies = JSON.parse(localStorage.getItem("movies")) || [];
 
-    // Add new account
-    movies.push(obj);
+    const existing = movies.find(m => m.title === obj.title);
+
+    if (existing) {
+      // Convert ratings to numbers
+      existing.sum = (existing.sum || Number(existing.rating)) + Number(obj.rating);
+      existing.count = (existing.count || 1) + 1;
+      existing.rating = (existing.sum / existing.count).toFixed(1); // average
+      } 
+  
+    else {
+      // Initialize with sum & count
+      obj.sum = Number(obj.rating);
+      obj.count = 1;
+      movies.push(obj);
+      }
+
 
     // Save back to localStorage
     localStorage.setItem("movies", JSON.stringify(movies));
@@ -35,12 +49,15 @@ function renderMovies() {
   }
 
   let output = "<ul>";
-  movies.forEach(movie => {
+  movies.forEach((movie,index) => {
+    const avg = Number(movie.rating);
+    const stars = "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
     output += `
       <div class="movie-card">
         <p>
           ${movie.title} (${movie.year}) - ${movie.genre}, 
-          Rating: <span class="stars">${"★".repeat(movie.rating)}</span>
+          Average Rating: <span class="stars">${stars}</span> (${avg})
+          <button class="delete-button" onclick="deleteMovie(${index})">Delete</button>
         </p>
       </div>
     `;
@@ -50,7 +67,15 @@ function renderMovies() {
   listDiv.innerHTML = output;
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
   renderMovies();
 });
 
+function deleteMovie(index) {
+  if (confirm("Are you sure you want to delete?")) {
+  let movies = JSON.parse(localStorage.getItem("movies")) || [];
+  movies.splice(index, 1); // remove the movie at that position
+  localStorage.setItem("movies", JSON.stringify(movies));
+  renderMovies();} // refresh the list 
+}
